@@ -9,7 +9,6 @@ The dataset is available in the **dataset** folder.
 
 ## To Start
 - Download the source code 
-- Make sure you change the working directory folder **setwd("C:/workspace/SocialAnxietyStudyInR/")**
+- Make sure you change the working directory folder **setwd("C:/workspace/SocialAnxietyStudyInR/")** to your local folder
 - Launch R Studio and run the file **Run.R**
 - Make sure there are 3 folders "all", "student" and "nonestudent" folders in the **output** folder. All visual graphs will be generated to the **output** folder.
-
