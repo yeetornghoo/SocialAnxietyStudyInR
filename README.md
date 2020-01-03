@@ -8,6 +8,7 @@ In order to run this script, R Studio need to be installed.
 The dataset is available in the **dataset** folder. 
 
 ## To Start
-- Download the source code and launch the file **Run.R**
+- Download the source code 
+- Launch R Studio and run the file **Run.R**
 - Make sure there are 3 folders "all", "student" and "nonestudent" folders in the **output** folder. All visual graphs will be generated to the **output** folder.
 
