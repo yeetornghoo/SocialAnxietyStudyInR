@@ -1,67 +1,23 @@
 source("controller/PlotController.R")
+source("controller/CorrelationController.R")
 
-Correlation.Student.Run <- function(df){
+Correlation.Run <- function(df, foldername){
 	
 	obj <- df
 
-	x <- as.numeric(obj$max_hours)	# X INDEPENDEND
-	y <- obj$ttl_point				# Y DEPENDEND
-	
-	m <- lm(y~x)	#Linear Regression Model
-	c <- coef(lm(y~x))
+	y <- obj$ttl_point	# Y DEPENDEND
 
-	fn <- paste('output/plot_max_student.png')
-	png(file = fn, 600, 500)
-	plot(x, y, main='Student', xlab='Hours on Social Media', ylab='Points')
-	abline(c, col="blue")
+	# X INDEPENDENT = MAX HOURS
+	#x <- as.numeric(obj$max_hours)
+	#PlotChart.Regression.Hours(x, y, 'Maximum Hours On Social Media per Day', 'hours', 'Social Anxiety Scale', foldername, 'maxhour')
+	#Correlation.coef(x, y)
 	
-	cr = cor(y, x, method='spearman')
-	cr = round(cr, digits=3)
+	# X INDEPENDENT = AGE
+	x <- as.numeric(obj$age)
+	#PlotChart.Regression.Age(x, y, 'Age', 'age', 'Social Anxiety Scale',foldername, 'age')
+	Correlation.coef(x, y)
 	
-	dev.off()
-
 }
 
-Correlation.NoneStudent.Run <- function(df){
-	
-	obj <- df
-
-	x <- as.numeric(obj$max_hours)	# X INDEPENDEND
-	y <- obj$ttl_point				# Y DEPENDEND
-	
-	m <- lm(y~x)	#Linear Regression Model
-	c <- coef(lm(y~x))
-
-	fn <- paste('output/plot_max_nonestudent.png')
-	png(file = fn, 600, 500)
-	plot(x, y, main='None Student', xlab='Hours on Social Media', ylab='Points')
-	abline(c, col="blue")
-	
-	cr = cor(y, x, method='spearman')
-	cr = round(cr, digits=3)
-	
-	dev.off()
-
-}
-
-Correlation.All.Run <- function(df){
-	
-	obj <- df
-
-	x <- as.numeric(obj$max_hours)	# X INDEPENDEND
-	y <- obj$ttl_point				# Y DEPENDEND
-	
-	m <- lm(y~x)	#Linear Regression Model
-	c <- coef(lm(y~x))
-
-	fn <- paste('output/plot_max_all.png')
-	png(file = fn, 600, 500)
-	plot(x, y, main='All', xlab='Hours on Social Media', ylab='Points')
-	abline(c, col="blue")
-	
-	cr = cor(y, x, method='spearman')
-	cr = round(cr, digits=3)
-	
-	dev.off()
-
-}
+# mat_data <- data.matrix(obj[,1:5])
+# heatmap(mat_data, Rowv = NULL)

@@ -6,8 +6,8 @@ source("controller/PlotController.R")
 Descriptive.Run <- function(df, foldername){
 
 	obj <- df
-	population_sd <- sd(obj$ttl_point)
-	population_mean <- mean(obj$ttl_point)  
+	population_sd <- round(sd(obj$ttl_point), digits = 3)
+	population_mean <- round(mean(obj$ttl_point), digits = 3)
 		
 	# GENDER
 	objtable <- table(obj$gender)
@@ -34,7 +34,8 @@ Descriptive.Run <- function(df, foldername){
 	png(fn, 600, 500)
 	boxplot(obj$ttl_point, femaleBox$ttl_point, maleBox$ttl_point, names=c('Overall', 'Female', 'Male'), ylab='Gender', horizontal = TRUE, xlab='Total Soxial Anxiety Scale', col=c('yellow', 'White', 'White'))
 	abline(v=population_mean, col='blue', lwd=1, lty=2)
-	abline(v=18, col='red', lwd=1, lty=2)
+	abline(v=18, col='orange', lwd=1, lty=2)
+	axis(1, at=population_mean,labels=population_mean)
 	axis(1, at=18,labels=18)
 
 	# BOX PLOT - MARITAL
@@ -43,8 +44,9 @@ Descriptive.Run <- function(df, foldername){
 	fn <- paste('output/',foldername,'/boxplot_marital.png', sep = "")
 	png(fn, 600, 500)
 	boxplot(obj$ttl_point, singleBox$ttl_point, marriedBox$ttl_point, names=c('Overall', 'Single', 'Married'), ylab='Marital Status', horizontal = TRUE, xlab='Total Soxial Anxiety Scale', col=c('yellow', 'White', 'White'))
-	abline(v=14, col='blue', lwd=1, lty=2)
-	abline(v=18, col='red', lwd=1, lty=2)
+	abline(v=population_mean, col='blue', lwd=1, lty=2)
+	abline(v=18, col='orange', lwd=1, lty=2)
+	axis(1, at=population_mean,labels=population_mean)
 	axis(1, at=18,labels=18)
 	
 	# BOX PLOT - STUDENT
@@ -54,7 +56,7 @@ Descriptive.Run <- function(df, foldername){
 	png(fn, 600, 500)
 	boxplot(obj$ttl_point, studentBox$ttl_point, notStudentBox$ttl_point, names=c('Overall', 'Student', 'None Student'), ylab='Student', horizontal = TRUE, xlab='Total Soxial Anxiety Scale', col=c('yellow', 'White', 'White'))
 	abline(v=14, col='blue', lwd=1, lty=2)
-	abline(v=18, col='red', lwd=1, lty=2)
+	abline(v=18, col='orange', lwd=1, lty=2)
 	axis(1, at=18,labels=18)
 	
 	# BOX PLOT - AGE
@@ -64,8 +66,9 @@ Descriptive.Run <- function(df, foldername){
 	fn <- paste('output/',foldername,'/boxplot_age.png', sep = "")
 	png(fn, 600, 500)
 	boxplot(obj$ttl_point, group1Box$ttl_point, group2Box$ttl_point, group3Box$ttl_point, names=c('Overall', '20 or below', '21 - 30', '31 - 40'), ylab='Age Range', horizontal = TRUE, xlab='Total Soxial Anxiety Scale', col=c('yellow', 'White', 'White', 'White'))
-	abline(v=14, col='blue', lwd=1, lty=2)
-	abline(v=18, col='red', lwd=1, lty=2)
+	abline(v=population_mean, col='blue', lwd=1, lty=2)
+	abline(v=18, col='orange', lwd=1, lty=2)
+	axis(1, at=population_mean,labels=population_mean)
 	axis(1, at=18,labels=18)
 	
 	graphics.off()
