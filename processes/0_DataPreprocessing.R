@@ -26,34 +26,6 @@ PreProcessing.Run <- function(df){
 	# obj$marital <- gsub("Single", "S", obj$marital)
 	# obj$marital <- gsub("Married", "M", obj$marital)
 
-	# TRANSFORM DATA - SAQ1
-	obj$saq1[obj$saq1 == 1] <- 5
-	obj$saq1[obj$saq1 == 2] <- 4
-	obj$saq1[obj$saq1 == 3] <- 3
-	obj$saq1[obj$saq1 == 4] <- 2
-	obj$saq1[obj$saq1 == 5] <- 1
-
-	# TRANSFORM DATA - saq2
-	obj$saq2[obj$saq2 == 1] <- 5
-	obj$saq2[obj$saq2 == 2] <- 4
-	obj$saq2[obj$saq2 == 3] <- 3
-	obj$saq2[obj$saq2 == 4] <- 2
-	obj$saq2[obj$saq2 == 5] <- 1
-	
-	# TRANSFORM DATA - saq3
-	obj$saq3[obj$saq3 == 1] <- 5
-	obj$saq3[obj$saq3 == 2] <- 4
-	obj$saq3[obj$saq3 == 3] <- 3
-	obj$saq3[obj$saq3 == 4] <- 2
-	obj$saq3[obj$saq3 == 5] <- 1
-	
-	# TRANSFORM DATA - saq4
-	obj$saq4[obj$saq4 == 1] <- 5
-	obj$saq4[obj$saq4 == 2] <- 4
-	obj$saq4[obj$saq4 == 3] <- 3
-	obj$saq4[obj$saq4 == 4] <- 2
-	obj$saq4[obj$saq4 == 5] <- 1	
-	
 	# TRANSFORM DATA - MAXIMUM HOURS
 	obj$max_hours <- gsub("0", "0", obj$max_hours)
 	obj$max_hours <- gsub("Less than 1 hours per day", 1, obj$max_hours)
