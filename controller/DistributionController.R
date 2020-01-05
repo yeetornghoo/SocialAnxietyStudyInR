@@ -18,32 +18,32 @@ DistributionController.dnorm <- function(objtable, chartname, xName, yName, fold
 	#MAX
 	abline(v=maxv, col='grey', lwd=1, lty=2)
 	axis(1, at=maxv,labels=maxv)
-	text(maxv, 0.16, paste('Max:',maxv), pos=4, col='grey')
+	text(maxv, 0.2, paste('Max:',maxv), pos=4, col='grey')
 	
 	#MIN
 	abline(v=minv, col='grey', lwd=1, lty=2)
 	axis(1, at=minv,labels=minv)
-	text(minv, 0.16, paste('Min:',minv), pos=2, col='grey')
+	text(minv, 0.2, paste('Min:',minv), pos=4, col='grey')
 	
 	#MEDIAN
 	abline(v=mdmv, col='grey', lwd=1, lty=2)
 	axis(1, at=mdmv,labels=mdmv)
-	text(mdmv, 0.16, paste('Median:',mdmv), pos=1, col='grey')
+	text(mdmv, 0.2, paste('Median:',mdmv), pos=4, col='grey')
 	
 	# MEAN
 	abline(v=population_mean, col='blue', lwd=1, lty=1)
 	axis(2, at=population_mean, labels=round(population_mean, digits = 1), las=2, cex.axis=0.7, tck=-.01)
-	text(population_mean, 0.09, paste('Mean:',population_mean), pos=1, col='blue')
+	text(population_mean, 0.04, paste('Mean:',population_mean), pos=1, col='blue')
 	
 	# MILD
-	abline(v=18, col='orange', lwd=1, lty=1)
-	axis(1, at=18,labels=18)
-	text(18, 0.08, paste('Mild:',18), pos=4, col='orange')
+	abline(v=19, col='orange', lwd=1, lty=1)
+	axis(1, at=19,labels=19)
+	text(19, 0.02, paste('Mild:',19), pos=4, col='orange')
 	
 	# HIGH
-	abline(v=24, col='orange', lwd=1, lty=1)
-	axis(1, at=24,labels=24)
-	text(24, 0.08, paste('High:',24), pos=4, col='orange')
+	abline(v=25, col='orange', lwd=1, lty=1)
+	axis(1, at=25,labels=25)
+	text(25, 0.02, paste('High:',25), pos=4, col='orange')
 	
 	dev.off()
 	

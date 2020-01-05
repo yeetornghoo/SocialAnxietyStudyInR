@@ -23,26 +23,26 @@ noneStudentdf <- surveys[surveys$student=='No',]
 #-------------------------------------------
 
 # DESCRITIVE ANALYSIS - ALL
-Descriptive.Run(surveys, 'all')
+# Descriptive.Run(surveys, 'all')
 
 # DESCRITIVE ANALYSIS - STUDENT
-Descriptive.Run(studentdf, 'student')
+# Descriptive.Run(studentdf, 'student')
 
 # DESCRITIVE ANALYSIS - NONE STUDENT
-Descriptive.Run(noneStudentdf, 'nonestudent')
+# Descriptive.Run(noneStudentdf, 'nonestudent')
 
 #-------------------------------------------
 # ANALYSIS / CORRELATION
 #-------------------------------------------
 
-Correlation.Run(surveys, 'all')
-Correlation.Run(studentdf, 'student')
-Correlation.Run(noneStudentdf, 'nonestudent')
+#Correlation.Run(surveys, 'all')
+#Correlation.Run(studentdf, 'student')
+#Correlation.Run(noneStudentdf, 'nonestudent')
 
 #-------------------------------------------
 # ANALYSIS / T TEST
 #-------------------------------------------
 
-#Test.Run(surveys, studentdf)
+Test.Run(surveys, studentdf)
 #Test.Run(studentdf, noneStudentdf)
 #Test.Run(surveys, noneStudentdf)

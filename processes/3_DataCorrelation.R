@@ -8,9 +8,9 @@ Correlation.Run <- function(df, foldername){
 	y <- obj$ttl_point	# Y DEPENDEND
 
 	# X INDEPENDENT = MAX HOURS
-	x <- as.numeric(obj$max_hours)
-	PlotChart.Regression.Hours(x, y, 'Maximum Hours On Social Media per Day', 'hours', 'Social Anxiety Scale', foldername, 'maxhour')
-	Correlation.coef(x, y)
+	#x <- as.numeric(obj$max_hours)
+	#PlotChart.Regression.Hours(x, y, 'Maximum Hours On Social Media per Day', 'hours', 'Social Anxiety Scale', foldername, 'maxhour')
+	#Correlation.coef(x, y)
 	
 	# X INDEPENDENT = AGE
 	x <- as.numeric(obj$age)

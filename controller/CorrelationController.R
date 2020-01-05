@@ -6,7 +6,7 @@ Correlation.coef <- function(objx, objy){
 
 	#cr = cor(objy, objx, method='spearman')
 	#cr = round(cr, digits=3)
-
+	
 	#kendall, pearson, spearman
 	cor.test(objy, objx,  method = c("spearman"), conf.level = 0.95)
 
